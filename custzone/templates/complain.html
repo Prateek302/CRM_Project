@@ -1,0 +1,23 @@
+{% extends "custparent.html" %}
+{% block body %}
+<h1 style="color:blue;text-align:center">Customer Complain Form</h1>
+<form action="{% url 'custzone:raisecomplain' %}" method="post">
+    {% csrf_token %}
+    <table style="margin:0 auto; width:60%">
+        <tr>
+            <td>Enter Complain Text</td>
+        </tr>
+        <tr>
+            <td>
+                <textarea rows="5" cols="30" name="complaintext" style="resize:none"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock body %}

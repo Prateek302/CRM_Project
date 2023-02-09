@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Zone</title>
+    <link href="{% static 'css/custstyle.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="green">
+<div id="outer">
+    <div id="header">
+        <div id="logo">
+            <img src="{% static 'images/logo.jpg' %}">
+        </div>
+        <div id="title">
+            Welcome to Customer Zone
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="{% url 'custzone:custhome' %}">Home</a></li>
+            <li><a href="{% url 'custzone:viewproducts' %}">View Products</a></li>
+            <li><a href="{% url 'custzone:complain' %}">Complain</a></li>
+            <li><a href="{% url 'custzone:feedback' %}">Feedback</a></li>
+            <li><a href="{% url 'custzone:changepassword' %}">Change Password</a></li>
+            <li><a href="{% url 'custzone:logout' %}">Logout</a></li>
+        </ul>
+    </div>
+<div id="main">
+    {% block body %}
+    {% endblock body %}
+</div>
+    <div id="footer">
+        <div id="lfooter">
+            Copyright &copy; to MARC Lab.
+        </div>
+        <div id="rfooter">
+            Developed By: Anand Kumar
+        </div>
+    </div>
+</div>
+</body>
+</html>

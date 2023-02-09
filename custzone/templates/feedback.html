@@ -1,0 +1,21 @@
+{% extends "custparent.html" %}
+{% block body %}
+<h1 style="color:blue;text-align:center">This is Feedback Page</h1>
+<form action="{% url 'custzone:givefeedback' %}" method="post">
+    {% csrf_token %}
+    <table style="margin:0 auto;width:60%;">
+        <tr>
+            <td>Enter Feedback</td>
+            <td>
+                <textarea name="feedbacktext" style="resize:none" rows="5" cols="30"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock body %}

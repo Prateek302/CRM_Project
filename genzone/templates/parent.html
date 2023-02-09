@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>CRM For MARC Lab</title>
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+    <script src="{% static 'js/external.js' %}" rel="stylesheet"></script>
+        <!--<script>
+       var imgname=["image1.jpg","image2.jpg","image3.jpg","image4.jpg"];
+        var i=0;
+           baseUrl="{% static 'images/' %}";
+        function moveSlider() {
+          if (i==imgname.length)
+             {
+             i=0;
+
+             }
+             document.getElementById("slide").src=baseUrl+imgname[i];
+             i++;
+             window.setTimeout("moveSlider()",2000);
+
+        }
+    </script>-->
+</head>
+<body bgcolor="grey" onload="moveSlider()">
+<div id="outer">
+    <div id="header">
+        <div id="logo">
+            <img src="{% static 'images/logo.jpg' %}">
+        </div>
+        <div id="title">
+            Customer Relationship Management
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'registration' %}">Registration</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'adminlogin' %}">Admin Login</a></li>
+        </ul>
+    </div>
+    <div id="slider">
+        <img id="slide" width="100%" height="100%">
+    </div>
+    <div id="main">
+        <div id="left">
+            {% block left %}
+            {% endblock left %}
+        </div>
+        <div id="right">
+            {% block body %}
+            {% endblock body %}
+        </div>
+    </div>
+    <div id="footer">
+        <div id="lfooter">
+            Copyright &copy; to MARC Lab.
+        </div>
+        <div id="rfooter">
+            Developed By: Anand Kumar
+        </div>
+    </div>
+</div>
+</body>
+</html>
